@@ -40,10 +40,6 @@
         <value>0</value>
       </property>
       <property type="s">
-        <key>projectName</key>
-        <value>X32 Monitor</value>
-      </property>
-      <property type="s">
         <key>name</key>
         <value>group</value>
       </property>
@@ -62,6 +58,10 @@
       <property type="i">
         <key>pointerPriority</key>
         <value>0</value>
+      </property>
+      <property type="s">
+        <key>projectName</key>
+        <value>X32 Monitor</value>
       </property>
       <property type="i">
         <key>shape</key>
@@ -112,10 +112,10 @@
           <property type="r">
             <key>frame</key>
             <value>
-              <x>4</x>
+              <x>0</x>
               <y>46</y>
-              <w>1336</w>
-              <h>751</h>
+              <w>1340</w>
+              <h>754</h>
             </value>
           </property>
           <property type="b">
@@ -232,8 +232,8 @@
                 <value>
                   <x>0</x>
                   <y>40</y>
-                  <w>1336</w>
-                  <h>711</h>
+                  <w>1340</w>
+                  <h>714</h>
                 </value>
               </property>
               <property type="b">
@@ -349,7 +349,7 @@
                   <property type="r">
                     <key>frame</key>
                     <value>
-                      <x>176</x>
+                      <x>152</x>
                       <y>12</y>
                       <w>1062</w>
                       <h>685</h>
@@ -2520,8 +2520,8 @@
                 <value>
                   <x>0</x>
                   <y>40</y>
-                  <w>1336</w>
-                  <h>711</h>
+                  <w>1340</w>
+                  <h>714</h>
                 </value>
               </property>
               <property type="b">
