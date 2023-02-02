@@ -8,6 +8,7 @@ local mixes = {
 }
 
 local mixButtons
+local customMixButton = root:findByName("Mix Select", true).children["Custom"].children["Mix Select Button"]
 
 function init()
   print("User info:")
@@ -28,6 +29,7 @@ end
 
 function onValueChanged(key)
   if key == "page" then
+    customMixButton.values.x = 1
     updateTab()
   end
 end
