@@ -18771,7 +18771,7 @@
               </value>
             </values>
           </node>
-          <node ID="a9c0fb62-b75f-11ec-bfe6-04922658cf47" type="TEXT">
+          <node ID="dde75c3c-a33c-11ed-a65a-04922658cf47" type="LABEL">
             <properties>
               <property type="b">
                 <key>background</key>
@@ -18800,7 +18800,7 @@
                   <x>5</x>
                   <y>5</y>
                   <w>96</w>
-                  <h>100</h>
+                  <h>96</h>
                 </value>
               </property>
               <property type="b">
@@ -18817,7 +18817,7 @@
               </property>
               <property type="s">
                 <key>name</key>
-                <value>Text</value>
+                <value>Expanding Label</value>
               </property>
               <property type="i">
                 <key>orientation</key>
@@ -18835,6 +18835,10 @@
                 <key>pointerPriority</key>
                 <value>0</value>
               </property>
+              <property type="s">
+                <key>script</key>
+                <value>${Expanding_Label.lua}</value>
+              </property>
               <property type="i">
                 <key>shape</key>
                 <value>1</value>
@@ -18842,6 +18846,14 @@
               <property type="i">
                 <key>textAlignH</key>
                 <value>2</value>
+              </property>
+              <property type="i">
+                <key>textAlignV</key>
+                <value>2</value>
+              </property>
+              <property type="b">
+                <key>textClip</key>
+                <value>1</value>
               </property>
               <property type="c">
                 <key>textColor</key>
@@ -18851,6 +18863,10 @@
                   <b>1</b>
                   <a>1</a>
                 </value>
+              </property>
+              <property type="i">
+                <key>textLength</key>
+                <value>0</value>
               </property>
               <property type="i">
                 <key>textSize</key>
@@ -18866,9 +18882,7 @@
                 <key>text</key>
                 <locked>0</locked>
                 <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                <default>
-Refresh
-</default>
+                <default>Refresh</default>
                 <defaultPull>0</defaultPull>
               </value>
               <value>
