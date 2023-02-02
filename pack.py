@@ -1,6 +1,8 @@
 import io
 import zlib
 import sys
+from configparser import ConfigParser
+import xml.etree.ElementTree as ET
 
 if (len(sys.argv) < 2):
     print('Expected argument\nUsage: "python pack.py xmlFileName"')
@@ -71,12 +73,46 @@ while startIndex != -1:
 
 print(f'Total replacements: {replacements}')
 
-build_format = 'Build/{project_name} v{cur_version}.tosc'
-build_name = build_format.format(project_name = sys.argv[1][0:-4], cur_version = version)
+build_config = ConfigParser()
+build_config.read('builds.ini')
+sections = build_config.sections()
+print(f'Build configurations found: {sections}\n')
 
-byteData = data.encode('UTF-8')
-compressed = zlib.compress(byteData)
+if len(sections) > 0:
+    for section in sections:
+        build_name = f'Build/{sys.argv[1][0:-4]} ({section}) v{version}.tosc'
+        temp_data = data
 
-file = io.open(build_name, 'wb')
-file.write(compressed)
-file.close()
+        print(section)
+        
+        # Replace string '$BUILD_NAME' with actual build name. This can automate relabeling things
+        temp_data = temp_data.replace('$BUILD_NAME', section)
+
+        root = ET.fromstring(temp_data)
+        properties = build_config[section].items()
+        for property in properties: 
+            xmlProperties = root.findall(".//property")
+            for p in xmlProperties:
+                if p[0].text == property[0].upper():
+                    print(f'Found {p[0].text}')
+                    print(f'Replacing value "{p[1].text}" with "{property[1]}"')
+                    p[1].text = property[1]
+        
+        build_data = ET.tostring(root)
+        compressed = zlib.compress(build_data)
+
+        file = io.open(build_name, 'wb')
+        file.write(compressed)
+        file.close()
+        print(f'Wrote to {build_name}')
+        print('----')
+else:
+    build_name = f'Build/{sys.argv[1][0:-4]} v{version}.tosc'
+    build_data = data.encode('UTF-8')
+    compressed = zlib.compress(build_data)
+    
+    file = io.open(build_name, 'wb')
+    file.write(compressed)
+    file.close()
+    print(f'Wrote to {build_name}')
+    print('----')

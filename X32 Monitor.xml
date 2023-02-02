@@ -80,6 +80,14 @@
     <children>
       <node ID="ff9dc52e-aea9-11ec-9436-04922658cf47" type="PAGER">
         <properties>
+          <property type="i">
+            <key>MATRIX</key>
+            <value>1</value>
+          </property>
+          <property type="s">
+            <key>USERNAME</key>
+            <value>Director</value>
+          </property>
           <property type="b">
             <key>background</key>
             <value>1</value>
@@ -519,7 +527,7 @@
                           </property>
                           <property type="b">
                             <key>interactive</key>
-                            <value>0</value>
+                            <value>1</value>
                           </property>
                           <property type="b">
                             <key>locked</key>
@@ -2254,7 +2262,7 @@
                           </property>
                           <property type="b">
                             <key>interactive</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="b">
                             <key>locked</key>
@@ -18505,7 +18513,7 @@
           </property>
           <property type="s">
             <key>name</key>
-            <value>User Name</value>
+            <value>User</value>
           </property>
           <property type="i">
             <key>orientation</key>
@@ -18566,7 +18574,7 @@
             <key>text</key>
             <locked>0</locked>
             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-            <default>Director</default>
+            <default>$BUILD_NAME</default>
             <defaultPull>0</defaultPull>
           </value>
           <value>

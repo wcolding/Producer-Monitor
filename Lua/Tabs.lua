@@ -1,17 +1,24 @@
-local matrix = 1
 local mixes = {
   [0] = 13, --program will be fed to mixbus 13
   [1] = 9,
   [2] = 10,
   [3] = 11,
   [4] = 12,
-  [5] = 13 + matrix  --auto-adjust custom mix by chosen matrix index
+  [5] = 13 + self.MATRIX  --auto-adjust custom mix by chosen matrix index
 }
 
 local mixButtons
 
 function init()
-  self.tag = string.format("%02d", matrix)
+  print("User info:")
+  print(self.USERNAME)
+  print(string.format("Matrix %02d", self.MATRIX))
+  print()
+
+  --local userObj = root:findByName("User")
+  --userObj.values.text = self.USERNAME
+
+  self.tag = string.format("%02d", self.MATRIX)
   
   customMix = root:findByName("Button Grid", true)
   customMix.tag = string.format("%02d", mixes[5])
