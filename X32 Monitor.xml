@@ -90,7 +90,7 @@
           </property>
           <property type="s">
             <key>USERNAME</key>
-            <value>Director</value>
+            <value>$BUILD_NAME</value>
           </property>
           <property type="b">
             <key>background</key>
@@ -18578,7 +18578,7 @@
             <key>text</key>
             <locked>0</locked>
             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-            <default>Director</default>
+            <default>$BUILD_NAME</default>
             <defaultPull>0</defaultPull>
           </value>
           <value>
