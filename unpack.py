@@ -100,9 +100,7 @@ file = io.open(sys.argv[1], 'rb')
 data = file.read()
 file.close()
 
-outputFile = sys.argv[1][0:-4] + 'xml'
-outputFile = outputFile.replace('Build/', '')
-outputFile = outputFile.replace('Build\\', '')
+outputFile = 'default.xml'
 
 try:
     uncompressed = zlib.decompress(data)
@@ -112,6 +110,12 @@ except:
 
 stringXML = uncompressed.decode('UTF-8')
 prettyXML = ET.XML(stringXML)
+
+xmlProperties = prettyXML.findall(".//property")
+for p in xmlProperties:
+    if p[0].text == 'projectName':
+        outputFile = f'{p[1].text}.xml'
+
 ET.indent(prettyXML)
 
 scriptObjs = GetRecursiveObjects(prettyXML)

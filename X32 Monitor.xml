@@ -40,6 +40,10 @@
         <value>0</value>
       </property>
       <property type="s">
+        <key>projectName</key>
+        <value>X32 Monitor</value>
+      </property>
+      <property type="s">
         <key>name</key>
         <value>group</value>
       </property>
@@ -18574,7 +18578,7 @@
             <key>text</key>
             <locked>0</locked>
             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-            <default>$BUILD_NAME</default>
+            <default>Director</default>
             <defaultPull>0</defaultPull>
           </value>
           <value>
