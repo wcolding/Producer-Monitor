@@ -10,6 +10,14 @@ local mixes = {
 local mixButtons
 local customMixButton = root:findByName("Mix Select", true).children["Custom"].children["Mix Select Button"]
 
+local currentChannel = 1
+local delay = 10
+local lastUpdate = 0
+local updating = false
+local tick = 0
+
+local oscString = ""
+
 function init()
   print("User info:")
   print(self.USERNAME)
@@ -28,29 +36,44 @@ function init()
 end
 
 function onValueChanged(key)
-  if key == "page" then
+  if key == "page" and self.values.page == 1 then
     customMixButton.values.x = 1
-    updateTab()
+    GetCustomMixData()
   end
 end
 
-function updateTab()
-  for i = 1, 32 do
-    local oscString = string.format("/ch/%02d/mix/%02d/on", i, mixes[5])
-    sendOSC(oscString)
+function update()
+  if updating then
+    tick = getMillis()
+    if (tick - lastUpdate) > delay then
+      lastUpdate = tick
+      if currentChannel < 33 then
+        GetCustomMixChannel(currentChannel)
+        currentChannel = currentChannel + 1
+      else
+        -- Stop updating after 1 cycle
+        currentChannel = 1
+        updating = false
+      end
+    end
   end
+end
+
+function GetCustomMixChannel(channel)
+  oscString = string.format("/ch/%02d/mix/%02d/on", channel, mixes[5])
+  sendOSC(oscString)
+  oscString = string.format("/ch/%02d/config/name", channel)
+  sendOSC(oscString)
+  oscString = string.format("/ch/%02d/config/color", channel)
+  sendOSC(oscString)
+end
+
+function GetCustomMixData()
+  currentChannel = 1
+  updating = true
 end
 
 function PullX32()
-  print("Fetching channel config...")
-  local oscString
-  for i = 1, 32 do
-    oscString = string.format("/ch/%02d/config/name", i)
-    sendOSC(oscString)
-    oscString = string.format("/ch/%02d/config/color", i)
-    sendOSC(oscString)
-  end
-  
   mixButtons = root:findByName("Mix Select", true)
   
   print("Fetching mixbus config...")
@@ -68,7 +91,7 @@ function PullX32()
   end
   
   print("Fetching custom mix...")
-  updateTab()
+  GetCustomMixData()
   
   print("Done!")
 end
