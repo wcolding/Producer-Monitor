@@ -948,7 +948,7 @@
                         <messages>
                           <osc>
                             <enabled>1</enabled>
-                            <send>1</send>
+                            <send>0</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
                             <connections>00001</connections>
@@ -1025,7 +1025,7 @@
                           </property>
                           <property type="s">
                             <key>name</key>
-                            <value>Expanding Label</value>
+                            <value>Expanding Mix Label</value>
                           </property>
                           <property type="i">
                             <key>orientation</key>
@@ -1045,7 +1045,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Label.lua}</value>
+                            <value>${Expanding_Mix_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -1090,7 +1090,7 @@
                             <key>text</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Sub 1</default>
+                            <default>Zone A</default>
                             <defaultPull>0</defaultPull>
                           </value>
                           <value>
@@ -1101,6 +1101,45 @@
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
+                        <messages>
+                          <osc>
+                            <enabled>1</enabled>
+                            <send>0</send>
+                            <receive>1</receive>
+                            <feedback>0</feedback>
+                            <connections>11111</connections>
+                            <triggers>
+                              <trigger>
+                                <var>text</var>
+                                <condition>ANY</condition>
+                              </trigger>
+                            </triggers>
+                            <path>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/bus/</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>PROPERTY</type>
+                                <conversion>STRING</conversion>
+                                <value>parent.tag</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/config/name</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </path>
+                            <arguments />
+                          </osc>
+                        </messages>
                       </node>
                     </children>
                   </node>
@@ -1295,7 +1334,7 @@
                         <messages>
                           <osc>
                             <enabled>1</enabled>
-                            <send>1</send>
+                            <send>0</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
                             <connections>00001</connections>
@@ -1372,7 +1411,7 @@
                           </property>
                           <property type="s">
                             <key>name</key>
-                            <value>Expanding Label</value>
+                            <value>Expanding Mix Label</value>
                           </property>
                           <property type="i">
                             <key>orientation</key>
@@ -1392,7 +1431,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Label.lua}</value>
+                            <value>${Expanding_Mix_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -1437,7 +1476,7 @@
                             <key>text</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Sub 2</default>
+                            <default>Zone B</default>
                             <defaultPull>0</defaultPull>
                           </value>
                           <value>
@@ -1448,6 +1487,45 @@
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
+                        <messages>
+                          <osc>
+                            <enabled>1</enabled>
+                            <send>0</send>
+                            <receive>1</receive>
+                            <feedback>0</feedback>
+                            <connections>11111</connections>
+                            <triggers>
+                              <trigger>
+                                <var>text</var>
+                                <condition>ANY</condition>
+                              </trigger>
+                            </triggers>
+                            <path>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/bus/</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>PROPERTY</type>
+                                <conversion>STRING</conversion>
+                                <value>parent.tag</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/config/name</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </path>
+                            <arguments />
+                          </osc>
+                        </messages>
                       </node>
                     </children>
                   </node>
@@ -1535,353 +1613,6 @@
                     </values>
                     <children>
                       <node ID="a98f7746-b114-11ec-bb08-c46516f3ed54" type="BUTTON">
-                        <properties>
-                          <property type="b">
-                            <key>background</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>buttonType</key>
-                            <value>2</value>
-                          </property>
-                          <property type="c">
-                            <key>color</key>
-                            <value>
-                              <r>0.988235</r>
-                              <g>1</g>
-                              <b>0.0431373</b>
-                              <a>1</a>
-                            </value>
-                          </property>
-                          <property type="f">
-                            <key>cornerRadius</key>
-                            <value>1</value>
-                          </property>
-                          <property type="r">
-                            <key>frame</key>
-                            <value>
-                              <x>32</x>
-                              <y>6</y>
-                              <w>220</w>
-                              <h>292</h>
-                            </value>
-                          </property>
-                          <property type="b">
-                            <key>grabFocus</key>
-                            <value>1</value>
-                          </property>
-                          <property type="b">
-                            <key>interactive</key>
-                            <value>1</value>
-                          </property>
-                          <property type="b">
-                            <key>locked</key>
-                            <value>0</value>
-                          </property>
-                          <property type="s">
-                            <key>name</key>
-                            <value>Mix Select Button</value>
-                          </property>
-                          <property type="i">
-                            <key>orientation</key>
-                            <value>0</value>
-                          </property>
-                          <property type="b">
-                            <key>outline</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>outlineStyle</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>pointerPriority</key>
-                            <value>0</value>
-                          </property>
-                          <property type="b">
-                            <key>press</key>
-                            <value>1</value>
-                          </property>
-                          <property type="b">
-                            <key>release</key>
-                            <value>1</value>
-                          </property>
-                          <property type="s">
-                            <key>script</key>
-                            <value>${Mix_Select_Button.lua}</value>
-                          </property>
-                          <property type="i">
-                            <key>shape</key>
-                            <value>1</value>
-                          </property>
-                          <property type="b">
-                            <key>valuePosition</key>
-                            <value>0</value>
-                          </property>
-                          <property type="b">
-                            <key>visible</key>
-                            <value>1</value>
-                          </property>
-                        </properties>
-                        <values>
-                          <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
-                            <key>x</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>0</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                        </values>
-                        <messages>
-                          <osc>
-                            <enabled>1</enabled>
-                            <send>1</send>
-                            <receive>1</receive>
-                            <feedback>0</feedback>
-                            <connections>00001</connections>
-                            <path>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>STRING</conversion>
-                                <value>/bus/</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>PROPERTY</type>
-                                <conversion>STRING</conversion>
-                                <value>parent.tag</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>STRING</conversion>
-                                <value>/config/color</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                            </path>
-                            <arguments />
-                          </osc>
-                        </messages>
-                      </node>
-                      <node ID="0daa9ab0-a324-11ed-b9a4-04922658cf47" type="LABEL">
-                        <properties>
-                          <property type="b">
-                            <key>background</key>
-                            <value>0</value>
-                          </property>
-                          <property type="c">
-                            <key>color</key>
-                            <value>
-                              <r>1</r>
-                              <g>0</g>
-                              <b>0</b>
-                              <a>1</a>
-                            </value>
-                          </property>
-                          <property type="f">
-                            <key>cornerRadius</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>font</key>
-                            <value>0</value>
-                          </property>
-                          <property type="r">
-                            <key>frame</key>
-                            <value>
-                              <x>32</x>
-                              <y>6</y>
-                              <w>220</w>
-                              <h>292</h>
-                            </value>
-                          </property>
-                          <property type="b">
-                            <key>grabFocus</key>
-                            <value>1</value>
-                          </property>
-                          <property type="b">
-                            <key>interactive</key>
-                            <value>0</value>
-                          </property>
-                          <property type="b">
-                            <key>locked</key>
-                            <value>0</value>
-                          </property>
-                          <property type="s">
-                            <key>name</key>
-                            <value>Expanding Label</value>
-                          </property>
-                          <property type="i">
-                            <key>orientation</key>
-                            <value>0</value>
-                          </property>
-                          <property type="b">
-                            <key>outline</key>
-                            <value>0</value>
-                          </property>
-                          <property type="i">
-                            <key>outlineStyle</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>pointerPriority</key>
-                            <value>0</value>
-                          </property>
-                          <property type="s">
-                            <key>script</key>
-                            <value>${Expanding_Label.lua}</value>
-                          </property>
-                          <property type="i">
-                            <key>shape</key>
-                            <value>1</value>
-                          </property>
-                          <property type="i">
-                            <key>textAlignH</key>
-                            <value>2</value>
-                          </property>
-                          <property type="i">
-                            <key>textAlignV</key>
-                            <value>2</value>
-                          </property>
-                          <property type="b">
-                            <key>textClip</key>
-                            <value>1</value>
-                          </property>
-                          <property type="c">
-                            <key>textColor</key>
-                            <value>
-                              <r>1</r>
-                              <g>1</g>
-                              <b>1</b>
-                              <a>1</a>
-                            </value>
-                          </property>
-                          <property type="i">
-                            <key>textLength</key>
-                            <value>0</value>
-                          </property>
-                          <property type="i">
-                            <key>textSize</key>
-                            <value>60</value>
-                          </property>
-                          <property type="b">
-                            <key>visible</key>
-                            <value>1</value>
-                          </property>
-                        </properties>
-                        <values>
-                          <value>
-                            <key>text</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Sub 3</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                        </values>
-                      </node>
-                    </children>
-                  </node>
-                  <node ID="1fd8dbac-b05e-11ec-95dd-c46516f3ed54" type="GROUP">
-                    <properties>
-                      <property type="b">
-                        <key>background</key>
-                        <value>1</value>
-                      </property>
-                      <property type="c">
-                        <key>color</key>
-                        <value>
-                          <r>0</r>
-                          <g>0</g>
-                          <b>0</b>
-                          <a>0</a>
-                        </value>
-                      </property>
-                      <property type="f">
-                        <key>cornerRadius</key>
-                        <value>1</value>
-                      </property>
-                      <property type="r">
-                        <key>frame</key>
-                        <value>
-                          <x>767</x>
-                          <y>378</y>
-                          <w>284</w>
-                          <h>305</h>
-                        </value>
-                      </property>
-                      <property type="b">
-                        <key>grabFocus</key>
-                        <value>0</value>
-                      </property>
-                      <property type="b">
-                        <key>interactive</key>
-                        <value>0</value>
-                      </property>
-                      <property type="b">
-                        <key>locked</key>
-                        <value>0</value>
-                      </property>
-                      <property type="s">
-                        <key>name</key>
-                        <value>Sub 4</value>
-                      </property>
-                      <property type="i">
-                        <key>orientation</key>
-                        <value>0</value>
-                      </property>
-                      <property type="b">
-                        <key>outline</key>
-                        <value>1</value>
-                      </property>
-                      <property type="i">
-                        <key>outlineStyle</key>
-                        <value>0</value>
-                      </property>
-                      <property type="i">
-                        <key>pointerPriority</key>
-                        <value>0</value>
-                      </property>
-                      <property type="i">
-                        <key>shape</key>
-                        <value>1</value>
-                      </property>
-                      <property type="s">
-                        <key>tag</key>
-                        <value>12</value>
-                      </property>
-                      <property type="b">
-                        <key>visible</key>
-                        <value>1</value>
-                      </property>
-                    </properties>
-                    <values>
-                      <value>
-                        <key>touch</key>
-                        <locked>0</locked>
-                        <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                        <default>false</default>
-                        <defaultPull>0</defaultPull>
-                      </value>
-                    </values>
-                    <children>
-                      <node ID="b4aaf33a-b114-11ec-9d4f-c46516f3ed54" type="BUTTON">
                         <properties>
                           <property type="b">
                             <key>background</key>
@@ -1989,7 +1720,393 @@
                         <messages>
                           <osc>
                             <enabled>1</enabled>
-                            <send>1</send>
+                            <send>0</send>
+                            <receive>1</receive>
+                            <feedback>0</feedback>
+                            <connections>00001</connections>
+                            <path>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/bus/</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>PROPERTY</type>
+                                <conversion>STRING</conversion>
+                                <value>parent.tag</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/config/color</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </path>
+                            <arguments />
+                          </osc>
+                        </messages>
+                      </node>
+                      <node ID="0daa9ab0-a324-11ed-b9a4-04922658cf47" type="LABEL">
+                        <properties>
+                          <property type="b">
+                            <key>background</key>
+                            <value>0</value>
+                          </property>
+                          <property type="c">
+                            <key>color</key>
+                            <value>
+                              <r>1</r>
+                              <g>0</g>
+                              <b>0</b>
+                              <a>1</a>
+                            </value>
+                          </property>
+                          <property type="f">
+                            <key>cornerRadius</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>font</key>
+                            <value>0</value>
+                          </property>
+                          <property type="r">
+                            <key>frame</key>
+                            <value>
+                              <x>32</x>
+                              <y>6</y>
+                              <w>220</w>
+                              <h>292</h>
+                            </value>
+                          </property>
+                          <property type="b">
+                            <key>grabFocus</key>
+                            <value>1</value>
+                          </property>
+                          <property type="b">
+                            <key>interactive</key>
+                            <value>0</value>
+                          </property>
+                          <property type="b">
+                            <key>locked</key>
+                            <value>0</value>
+                          </property>
+                          <property type="s">
+                            <key>name</key>
+                            <value>Expanding Mix Label</value>
+                          </property>
+                          <property type="i">
+                            <key>orientation</key>
+                            <value>0</value>
+                          </property>
+                          <property type="b">
+                            <key>outline</key>
+                            <value>0</value>
+                          </property>
+                          <property type="i">
+                            <key>outlineStyle</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>pointerPriority</key>
+                            <value>0</value>
+                          </property>
+                          <property type="s">
+                            <key>script</key>
+                            <value>${Expanding_Mix_Label.lua}</value>
+                          </property>
+                          <property type="i">
+                            <key>shape</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>textAlignH</key>
+                            <value>2</value>
+                          </property>
+                          <property type="i">
+                            <key>textAlignV</key>
+                            <value>2</value>
+                          </property>
+                          <property type="b">
+                            <key>textClip</key>
+                            <value>1</value>
+                          </property>
+                          <property type="c">
+                            <key>textColor</key>
+                            <value>
+                              <r>1</r>
+                              <g>1</g>
+                              <b>1</b>
+                              <a>1</a>
+                            </value>
+                          </property>
+                          <property type="i">
+                            <key>textLength</key>
+                            <value>0</value>
+                          </property>
+                          <property type="i">
+                            <key>textSize</key>
+                            <value>60</value>
+                          </property>
+                          <property type="b">
+                            <key>visible</key>
+                            <value>1</value>
+                          </property>
+                        </properties>
+                        <values>
+                          <value>
+                            <key>text</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>1</lockedDefaultCurrent>
+                            <default>Zone C</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                        </values>
+                        <messages>
+                          <osc>
+                            <enabled>1</enabled>
+                            <send>0</send>
+                            <receive>1</receive>
+                            <feedback>0</feedback>
+                            <connections>11111</connections>
+                            <triggers>
+                              <trigger>
+                                <var>text</var>
+                                <condition>ANY</condition>
+                              </trigger>
+                            </triggers>
+                            <path>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/bus/</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>PROPERTY</type>
+                                <conversion>STRING</conversion>
+                                <value>parent.tag</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/config/name</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </path>
+                            <arguments />
+                          </osc>
+                        </messages>
+                      </node>
+                    </children>
+                  </node>
+                  <node ID="1fd8dbac-b05e-11ec-95dd-c46516f3ed54" type="GROUP">
+                    <properties>
+                      <property type="b">
+                        <key>background</key>
+                        <value>1</value>
+                      </property>
+                      <property type="c">
+                        <key>color</key>
+                        <value>
+                          <r>0</r>
+                          <g>0</g>
+                          <b>0</b>
+                          <a>0</a>
+                        </value>
+                      </property>
+                      <property type="f">
+                        <key>cornerRadius</key>
+                        <value>1</value>
+                      </property>
+                      <property type="r">
+                        <key>frame</key>
+                        <value>
+                          <x>767</x>
+                          <y>378</y>
+                          <w>284</w>
+                          <h>305</h>
+                        </value>
+                      </property>
+                      <property type="b">
+                        <key>grabFocus</key>
+                        <value>0</value>
+                      </property>
+                      <property type="b">
+                        <key>interactive</key>
+                        <value>0</value>
+                      </property>
+                      <property type="b">
+                        <key>locked</key>
+                        <value>0</value>
+                      </property>
+                      <property type="s">
+                        <key>name</key>
+                        <value>Sub 4</value>
+                      </property>
+                      <property type="i">
+                        <key>orientation</key>
+                        <value>0</value>
+                      </property>
+                      <property type="b">
+                        <key>outline</key>
+                        <value>1</value>
+                      </property>
+                      <property type="i">
+                        <key>outlineStyle</key>
+                        <value>0</value>
+                      </property>
+                      <property type="i">
+                        <key>pointerPriority</key>
+                        <value>0</value>
+                      </property>
+                      <property type="i">
+                        <key>shape</key>
+                        <value>1</value>
+                      </property>
+                      <property type="s">
+                        <key>tag</key>
+                        <value>12</value>
+                      </property>
+                      <property type="b">
+                        <key>visible</key>
+                        <value>1</value>
+                      </property>
+                    </properties>
+                    <values>
+                      <value>
+                        <key>touch</key>
+                        <locked>0</locked>
+                        <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                        <default>false</default>
+                        <defaultPull>0</defaultPull>
+                      </value>
+                    </values>
+                    <children>
+                      <node ID="b4aaf33a-b114-11ec-9d4f-c46516f3ed54" type="BUTTON">
+                        <properties>
+                          <property type="b">
+                            <key>background</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>buttonType</key>
+                            <value>2</value>
+                          </property>
+                          <property type="c">
+                            <key>color</key>
+                            <value>
+                              <r>0.929412</r>
+                              <g>0.152941</g>
+                              <b>0.67451</b>
+                              <a>1</a>
+                            </value>
+                          </property>
+                          <property type="f">
+                            <key>cornerRadius</key>
+                            <value>1</value>
+                          </property>
+                          <property type="r">
+                            <key>frame</key>
+                            <value>
+                              <x>32</x>
+                              <y>6</y>
+                              <w>220</w>
+                              <h>292</h>
+                            </value>
+                          </property>
+                          <property type="b">
+                            <key>grabFocus</key>
+                            <value>1</value>
+                          </property>
+                          <property type="b">
+                            <key>interactive</key>
+                            <value>1</value>
+                          </property>
+                          <property type="b">
+                            <key>locked</key>
+                            <value>0</value>
+                          </property>
+                          <property type="s">
+                            <key>name</key>
+                            <value>Mix Select Button</value>
+                          </property>
+                          <property type="i">
+                            <key>orientation</key>
+                            <value>0</value>
+                          </property>
+                          <property type="b">
+                            <key>outline</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>outlineStyle</key>
+                            <value>1</value>
+                          </property>
+                          <property type="i">
+                            <key>pointerPriority</key>
+                            <value>0</value>
+                          </property>
+                          <property type="b">
+                            <key>press</key>
+                            <value>1</value>
+                          </property>
+                          <property type="b">
+                            <key>release</key>
+                            <value>1</value>
+                          </property>
+                          <property type="s">
+                            <key>script</key>
+                            <value>${Mix_Select_Button.lua}</value>
+                          </property>
+                          <property type="i">
+                            <key>shape</key>
+                            <value>1</value>
+                          </property>
+                          <property type="b">
+                            <key>valuePosition</key>
+                            <value>0</value>
+                          </property>
+                          <property type="b">
+                            <key>visible</key>
+                            <value>1</value>
+                          </property>
+                        </properties>
+                        <values>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>x</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                        </values>
+                        <messages>
+                          <osc>
+                            <enabled>1</enabled>
+                            <send>0</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
                             <connections>00001</connections>
@@ -2066,7 +2183,7 @@
                           </property>
                           <property type="s">
                             <key>name</key>
-                            <value>Expanding Label</value>
+                            <value>Expanding Mix Label</value>
                           </property>
                           <property type="i">
                             <key>orientation</key>
@@ -2086,7 +2203,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Label.lua}</value>
+                            <value>${Expanding_Mix_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -2131,7 +2248,7 @@
                             <key>text</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Sub 4</default>
+                            <default>Zone D</default>
                             <defaultPull>0</defaultPull>
                           </value>
                           <value>
@@ -2142,6 +2259,45 @@
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
+                        <messages>
+                          <osc>
+                            <enabled>1</enabled>
+                            <send>0</send>
+                            <receive>1</receive>
+                            <feedback>0</feedback>
+                            <connections>11111</connections>
+                            <triggers>
+                              <trigger>
+                                <var>text</var>
+                                <condition>ANY</condition>
+                              </trigger>
+                            </triggers>
+                            <path>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/bus/</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>PROPERTY</type>
+                                <conversion>STRING</conversion>
+                                <value>parent.tag</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                              <partial>
+                                <type>CONSTANT</type>
+                                <conversion>STRING</conversion>
+                                <value>/config/name</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </path>
+                            <arguments />
+                          </osc>
+                        </messages>
                       </node>
                     </children>
                   </node>
@@ -2637,8 +2793,8 @@
                   <property type="r">
                     <key>frame</key>
                     <value>
-                      <x>9</x>
-                      <y>138</y>
+                      <x>10</x>
+                      <y>0</y>
                       <w>1321</w>
                       <h>802</h>
                     </value>

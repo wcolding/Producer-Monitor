@@ -8,7 +8,7 @@ if (len(sys.argv) < 2):
     print('Expected argument\nUsage: "python pack.py xmlFileName"')
     exit()
 
-version = '3.0'
+version = '3.1'
 
 file = io.open(sys.argv[1], 'r')
 data = file.read()
