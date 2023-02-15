@@ -1,4 +1,4 @@
-local minY = 8
+local minY = 2
 
 function onReceiveOSC(message, connections)
   local path = message[1]
