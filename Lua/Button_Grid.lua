@@ -12,14 +12,3 @@ function init()
     print("Set defaults")
   end
 end
-
-function updateMix(number)
-  for i = 1, #self.children do
-    oscString = string.format("/ch/%02d/mix/%02d/on", i, number)
-    sendOSC(oscString)
-  end
-end
-
-function onReceiveNotify(sender, msg)
-  updateMix(msg)
-end
