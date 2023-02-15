@@ -8,7 +8,9 @@ if (len(sys.argv) < 2):
     print('Expected argument\nUsage: "python pack.py xmlFileName"')
     exit()
 
-version = '3.1'
+file = io.open('version', 'r')
+version = file.read()
+file.close()
 
 file = io.open(sys.argv[1], 'r')
 data = file.read()
@@ -26,23 +28,26 @@ submoduleScript = ''
 start = ''
 end = ''
 
-while startIndex != -1:
-    startIndex = data.find('${')
-    if startIndex > -1:
-        endIndex = data.find('}', startIndex)
-        luaName = data[startIndex + 2 : endIndex]
-        print(f'Reference found: \'{luaName}\'')
+# Todo: Redo this entirely with ElementTree stuff instead of string replacement
 
+root = ET.fromstring(data)
+xmlProperties = root.findall(".//property")
+
+for p in xmlProperties:
+    if p[0].text == 'script' and p[1].text[0] == '$':
+        luaName = p[1].text[2:-1]
+        print(f'Found script reference: {luaName}')
+        
         try:
             luaFile = io.open(f'Lua/{luaName}', 'r')
             luaScript = luaFile.read()
             luaFile.close()
         except:
-            print(f'Unable to open file \'{luaName}\'')
+            print(f'Unable to open file \'{luaName}\'\nCheck that file is in Lua folder')
             print('Could not complete packing! Closing...')
             exit()
 
-        # Check luaScript for submodules
+        # Check luaScript for submodules and insert them as needed
         while submoduleStart != -1:
             submoduleStart = luaScript.find('--Submodule.include(\'')
             if submoduleStart > -1:
@@ -58,47 +63,48 @@ while startIndex != -1:
                         submoduleScript = luaFile.read()
                         luaFile.close()
                     except:
-                        print(f'Unable to open submodule file \'{submoduleName}\'')
+                        print(f'Unable to open submodule file \'{submoduleName}\'\nCheck that file is in Lua\Submodules folder')
                         print('Could not complete packing! Closing...')
                         exit()
                     
                     luaScript = luaScript.replace(f'--Submodule.include(\'{submoduleName}\')', submoduleScript)
                     replacements += 1
-
-        # Insert luaScript into XML 
-        start = data[0 : startIndex]
-        end = data[endIndex + 1 :]
-        data = f'{start}<![CDATA[{luaScript}]]>{end}'
+        
+        # Replace script reference with actual script
+        p[1].text = luaScript
         replacements += 1
 
 print(f'Total replacements: {replacements}')
+main_data = ET.tostring(root, encoding='unicode')
 
+# Build specific changes
 build_config = ConfigParser()
 build_config.read('builds.ini')
 sections = build_config.sections()
 print(f'Build configurations found: {sections}\n')
 
+
 if len(sections) > 0:
     for section in sections:
-        build_name = f'Build/{sys.argv[1][0:-4]} ({section}) v{version}.tosc'
-        temp_data = data
+        build_name = f'Build/{sys.argv[1][0:-4]} ({section}) {version}.tosc'
+        temp_data = main_data
 
         print(section)
         
         # Replace string '$BUILD_NAME' with actual build name. This can automate relabeling things
         temp_data = temp_data.replace('$BUILD_NAME', section)
 
-        root = ET.fromstring(temp_data)
+        build_root = ET.fromstring(temp_data)
         properties = build_config[section].items()
         for property in properties: 
-            xmlProperties = root.findall(".//property")
+            xmlProperties = build_root.findall(".//property")
             for p in xmlProperties:
                 if p[0].text == property[0].upper():
                     print(f'Found {p[0].text}')
                     print(f'Replacing value "{p[1].text}" with "{property[1]}"')
                     p[1].text = property[1]
         
-        build_data = ET.tostring(root)
+        build_data = ET.tostring(build_root)
         compressed = zlib.compress(build_data)
 
         file = io.open(build_name, 'wb')
