@@ -2,13 +2,10 @@ local defaults = nil
 
 function init()
   if defaults == nil then
-    local ch = 1
   
     for i = 1, #self.children do
-      self.children[i].name = string.format("Ch%02d", ch)
-      self.children[i].tag = string.format("%02d", ch)
-      self.children[i].children["Text"].values.text = self.children[i].name
-      ch = ch + 1
+      self.children[i].name = string.format("Ch%02d", i)
+      self.children[i].tag = string.format("%02d", i)
     end
     
     defaults = "set"
