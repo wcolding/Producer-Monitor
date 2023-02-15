@@ -3110,7 +3110,7 @@
                             <triggers>
                               <trigger>
                                 <var>x</var>
-                                <condition>RISE</condition>
+                                <condition>ANY</condition>
                               </trigger>
                             </triggers>
                             <path>
@@ -3152,68 +3152,9 @@
                             </path>
                             <arguments>
                               <partial>
-                                <type>CONSTANT</type>
+                                <type>VALUE</type>
                                 <conversion>INTEGER</conversion>
-                                <value>1</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                            </arguments>
-                          </osc>
-                          <osc>
-                            <enabled>1</enabled>
-                            <send>1</send>
-                            <receive>1</receive>
-                            <feedback>0</feedback>
-                            <connections>00001</connections>
-                            <triggers>
-                              <trigger>
-                                <var>x</var>
-                                <condition>FALL</condition>
-                              </trigger>
-                            </triggers>
-                            <path>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>STRING</conversion>
-                                <value>/ch/</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>PROPERTY</type>
-                                <conversion>STRING</conversion>
-                                <value>parent.tag</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>STRING</conversion>
-                                <value>/mix/</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>PROPERTY</type>
-                                <conversion>STRING</conversion>
-                                <value>parent.parent.tag</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>STRING</conversion>
-                                <value>/on</value>
-                                <scaleMin>0</scaleMin>
-                                <scaleMax>1</scaleMax>
-                              </partial>
-                            </path>
-                            <arguments>
-                              <partial>
-                                <type>CONSTANT</type>
-                                <conversion>INTEGER</conversion>
-                                <value>0</value>
+                                <value>x</value>
                                 <scaleMin>0</scaleMin>
                                 <scaleMax>1</scaleMax>
                               </partial>

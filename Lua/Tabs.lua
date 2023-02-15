@@ -11,7 +11,7 @@ local mixButtons
 local customMixButton = root:findByName("Mix Select", true).children["Custom"].children["Mix Select Button"]
 
 local currentChannel = 1
-local delay = 10
+local delay = 20
 local lastUpdate = 0
 local updating = false
 local tick = 0
@@ -24,8 +24,8 @@ function init()
   print(string.format("Matrix %02d", self.MATRIX))
   print()
 
-  --local userObj = root:findByName("User")
-  --userObj.values.text = self.USERNAME
+  local userObj = root:findByName("User")
+  userObj.values.text = self.USERNAME
 
   self.tag = string.format("%02d", self.MATRIX)
   
