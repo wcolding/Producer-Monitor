@@ -80,16 +80,18 @@ print(f'Total script replacements: {replacements}\n')
 xml_iterable_buttons_group = root.find(".//*[key='iterableButton']......")
 xml_iterable_buttons = xml_iterable_buttons_group.findall(".//*[key='iterableButton']....")
 
-# temp, will use mix_layout.ini instead
-grid_start_x = 10
-grid_start_y = 40
-button_width = 320
-button_height = 120
-padding_x = 6
-padding_y = 16
-auto_channels = 16
-buttons_per_row = 4
-text_size = 32
+layout_config = ConfigParser()
+layout_config.read('mix_layout.ini')
+
+grid_start_x = int(layout_config['Default']['GridStartX'])
+grid_start_y = int(layout_config['Default']['GridStartY'])
+button_width = int(layout_config['Default']['ButtonWidth'])
+button_height = int(layout_config['Default']['ButtonHeight'])
+padding_x = int(layout_config['Default']['PaddingX'])
+padding_y = int(layout_config['Default']['PaddingY'])
+auto_channels = int(layout_config['Default']['AutoChannels'])
+buttons_per_row = int(layout_config['Default']['ButtonsPerRow'])
+text_size = int(layout_config['Default']['TextSize'])
 
 for i in range(auto_channels):
     if i == 0:
@@ -149,7 +151,7 @@ for i in range(auto_channels):
         # Append new button
         xml_iterable_buttons_group.append(curButton)
     
-    
+
 main_data = ET.tostring(root, encoding='unicode')
 
 # Build specific changes
