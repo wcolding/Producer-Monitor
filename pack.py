@@ -17,61 +17,59 @@ data = file.read()
 file.close()
 
 replacements = 0
-startIndex = 0
-endIndex = 0
-luaName = ''
-luaScript = ''
-submoduleStart = 0
-submoduleNext = 0
-submoduleName = ''
-submoduleScript = ''
+lua_name = ''
+lua_script = ''
+submodule_start = 0
+submodule_next = 0
+submodule_name = ''
+submodule_script = ''
 start = ''
 end = ''
 
 # Todo: Redo this entirely with ElementTree stuff instead of string replacement
 
 root = ET.fromstring(data)
-xmlProperties = root.findall(".//property")
+xml_properties = root.findall(".//property")
 
-for p in xmlProperties:
+for p in xml_properties:
     if p[0].text == 'script' and p[1].text[0] == '$':
-        luaName = p[1].text[2:-1]
-        print(f'Found script reference: {luaName}')
+        lua_name = p[1].text[2:-1]
+        print(f'Found script reference: {lua_name}')
         
         try:
-            luaFile = io.open(f'Lua/{luaName}', 'r')
-            luaScript = luaFile.read()
-            luaFile.close()
+            lua_file = io.open(f'Lua/{lua_name}', 'r')
+            lua_script = lua_file.read()
+            lua_file.close()
         except:
-            print(f'Unable to open file \'{luaName}\'\nCheck that file is in Lua folder')
+            print(f'Unable to open file \'{lua_name}\'\nCheck that file is in Lua folder')
             print('Could not complete packing! Closing...')
             exit()
 
         # Check luaScript for submodules and insert them as needed
-        while submoduleStart != -1:
-            submoduleStart = luaScript.find('--Submodule.include(\'')
-            if submoduleStart > -1:
-                start = luaScript[0 : submoduleStart]
-                end = luaScript[submoduleStart + 21 :]
-                submoduleNext = end.find('\')')
-                submoduleName = end[0:submoduleNext]
-                if submoduleNext > -1:
-                    print(f'Found submodule reference: \'{submoduleName}\'')
+        while submodule_start != -1:
+            submodule_start = lua_script.find('--Submodule.include(\'')
+            if submodule_start > -1:
+                start = lua_script[0 : submodule_start]
+                end = lua_script[submodule_start + 21 :]
+                submodule_next = end.find('\')')
+                submodule_name = end[0:submodule_next]
+                if submodule_next > -1:
+                    print(f'Found submodule reference: \'{submodule_name}\'')
                     
                     try:
-                        luaFile = io.open(f'Lua/Submodules/{submoduleName}', 'r')
-                        submoduleScript = luaFile.read()
-                        luaFile.close()
+                        lua_file = io.open(f'Lua/Submodules/{submodule_name}', 'r')
+                        submodule_script = lua_file.read()
+                        lua_file.close()
                     except:
-                        print(f'Unable to open submodule file \'{submoduleName}\'\nCheck that file is in Lua\Submodules folder')
+                        print(f'Unable to open submodule file \'{submodule_name}\'\nCheck that file is in Lua\Submodules folder')
                         print('Could not complete packing! Closing...')
                         exit()
                     
-                    luaScript = luaScript.replace(f'--Submodule.include(\'{submoduleName}\')', submoduleScript)
+                    lua_script = lua_script.replace(f'--Submodule.include(\'{submodule_name}\')', submodule_script)
                     replacements += 1
         
         # Replace script reference with actual script
-        p[1].text = luaScript
+        p[1].text = lua_script
         replacements += 1
 
 print(f'Total replacements: {replacements}')
@@ -97,8 +95,8 @@ if len(sections) > 0:
         build_root = ET.fromstring(temp_data)
         properties = build_config[section].items()
         for property in properties: 
-            xmlProperties = build_root.findall(".//property")
-            for p in xmlProperties:
+            xml_properties = build_root.findall(".//property")
+            for p in xml_properties:
                 if p[0].text == property[0].upper():
                     print(f'Found {p[0].text}')
                     print(f'Replacing value "{p[1].text}" with "{property[1]}"')
