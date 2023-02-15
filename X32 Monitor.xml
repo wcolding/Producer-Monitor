@@ -531,7 +531,7 @@
                           </property>
                           <property type="b">
                             <key>interactive</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="b">
                             <key>locked</key>
@@ -2422,7 +2422,7 @@
                           </property>
                           <property type="b">
                             <key>interactive</key>
-                            <value>0</value>
+                            <value>1</value>
                           </property>
                           <property type="b">
                             <key>locked</key>
@@ -2793,10 +2793,10 @@
                   <property type="r">
                     <key>frame</key>
                     <value>
-                      <x>10</x>
+                      <x>0</x>
                       <y>0</y>
-                      <w>1321</w>
-                      <h>802</h>
+                      <w>1340</w>
+                      <h>800</h>
                     </value>
                   </property>
                   <property type="b">
@@ -2879,10 +2879,6 @@
                 <children>
                   <node ID="e3ab5031-af8e-11ec-8e2e-04922658cf47" type="GROUP">
                     <properties>
-                      <property type="i">  
-                        <key>iterableButton</key>
-                        <value>1</value>
-                      </property>
                       <property type="b">
                         <key>background</key>
                         <value>1</value>
@@ -2903,10 +2899,10 @@
                       <property type="r">
                         <key>frame</key>
                         <value>
-                          <x>6</x>
-                          <y>6</y>
-                          <w>134</w>
-                          <h>180</h>
+                          <x>10</x>
+                          <y>20</y>
+                          <w>160</w>
+                          <h>120</h>
                         </value>
                       </property>
                       <property type="b">
@@ -2916,6 +2912,10 @@
                       <property type="b">
                         <key>interactive</key>
                         <value>0</value>
+                      </property>
+                      <property type="i">
+                        <key>iterableButton</key>
+                        <value>1</value>
                       </property>
                       <property type="b">
                         <key>locked</key>
@@ -2977,9 +2977,9 @@
                           <property type="c">
                             <key>color</key>
                             <value>
-                              <r>0.0901961</r>
-                              <g>0.694118</g>
-                              <b>1</b>
+                              <r>0.905882</r>
+                              <g>0.176471</g>
+                              <b>0.180392</b>
                               <a>1</a>
                             </value>
                           </property>
@@ -2992,8 +2992,8 @@
                             <value>
                               <x>0</x>
                               <y>0</y>
-                              <w>120</w>
-                              <h>160</h>
+                              <w>160</w>
+                              <h>120</h>
                             </value>
                           </property>
                           <property type="b">
@@ -3018,7 +3018,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -3221,7 +3221,7 @@
                           </osc>
                         </messages>
                       </node>
-                      <node ID="e3ab781c-af8e-11ec-be4f-04922658cf47" type="TEXT">
+                      <node ID="40f852a0-ad55-11ed-b0db-04922658cf47" type="LABEL">
                         <properties>
                           <property type="b">
                             <key>background</key>
@@ -3248,14 +3248,14 @@
                             <key>frame</key>
                             <value>
                               <x>0</x>
-                              <y>57</y>
-                              <w>120</w>
-                              <h>160</h>
+                              <y>0</y>
+                              <w>160</w>
+                              <h>120</h>
                             </value>
                           </property>
                           <property type="b">
                             <key>grabFocus</key>
-                            <value>0</value>
+                            <value>1</value>
                           </property>
                           <property type="b">
                             <key>interactive</key>
@@ -3267,7 +3267,7 @@
                           </property>
                           <property type="s">
                             <key>name</key>
-                            <value>Text</value>
+                            <value>Expanding Button Label</value>
                           </property>
                           <property type="i">
                             <key>orientation</key>
@@ -3287,7 +3287,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Text.lua}</value>
+                            <value>${Expanding_Button_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -3297,6 +3297,14 @@
                             <key>textAlignH</key>
                             <value>2</value>
                           </property>
+                          <property type="i">
+                            <key>textAlignV</key>
+                            <value>2</value>
+                          </property>
+                          <property type="b">
+                            <key>textClip</key>
+                            <value>1</value>
+                          </property>
                           <property type="c">
                             <key>textColor</key>
                             <value>
@@ -3305,6 +3313,10 @@
                               <b>1</b>
                               <a>1</a>
                             </value>
+                          </property>
+                          <property type="i">
+                            <key>textLength</key>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>textSize</key>
@@ -3320,7 +3332,7 @@
                             <key>text</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Ch01</default>
+                            <default>Label</default>
                             <defaultPull>0</defaultPull>
                           </value>
                           <value>
@@ -3337,7 +3349,7 @@
                             <send>0</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
-                            <connections>00001</connections>
+                            <connections>11111</connections>
                             <triggers>
                               <trigger>
                                 <var>text</var>
