@@ -1,0 +1,3 @@
+[submodule "pyTOSC"]
+	path = pyTOSC
+	url = https://github.com/wcolding/pyTOSC
