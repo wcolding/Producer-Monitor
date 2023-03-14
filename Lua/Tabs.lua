@@ -8,7 +8,7 @@ local mixes = {
 }
 
 local mixButtons
-local customMixButton = root:findByName("Mix Select", true).children["Custom"].children["Mix Select Button"]
+local mixSelect = root:findByName("Mix Select", true)
 
 local currentChannel = 1
 local delay = 20
@@ -36,9 +36,13 @@ function init()
 end
 
 function onValueChanged(key)
-  if key == "page" and self.values.page == 1 then
-    customMixButton.values.x = 1
-    GetCustomMixData()
+  if key == "page" then 
+    if self.values.page == 1 then
+      self.notify(mixSelect, "Toggle", 6)
+      GetCustomMixData()
+    else
+      self.notify(mixSelect, "Toggle", mixSelect.selected)
+    end
   end
 end
 

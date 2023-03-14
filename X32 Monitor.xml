@@ -392,6 +392,10 @@
                     <value>${Mix_Select.lua}</value>
                   </property>
                   <property type="i">
+                    <key>selected</key>
+                    <value>1</value>
+                  </property>
+                  <property type="i">
                     <key>shape</key>
                     <value>1</value>
                   </property>
@@ -432,8 +436,8 @@
                       <property type="r">
                         <key>frame</key>
                         <value>
-                          <x>11</x>
-                          <y>5</y>
+                          <x>17</x>
+                          <y>183</y>
                           <w>284</w>
                           <h>305</h>
                         </value>
@@ -2339,7 +2343,7 @@
                       </property>
                       <property type="b">
                         <key>locked</key>
-                        <value>0</value>
+                        <value>1</value>
                       </property>
                       <property type="s">
                         <key>name</key>
@@ -2371,7 +2375,7 @@
                       </property>
                       <property type="b">
                         <key>visible</key>
-                        <value>1</value>
+                        <value>0</value>
                       </property>
                     </properties>
                     <values>

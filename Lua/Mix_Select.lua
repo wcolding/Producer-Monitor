@@ -1,21 +1,24 @@
-local selected = 1
 local oscString
 local db
 
 function init()
   for i = 1, #self.children do
-    if i == selected then
+    if i == self.selected then
       self.children[i].children["Mix Select Button"].values.x = 1
     end
   end
 end
 
 function onReceiveNotify(sender, msg)
-  selected = msg
-  doSelected()
+  if msg < 6 then 
+    self.selected = msg
+    updateSelection(self.selected)
+  else
+    updateSelection(msg)
+  end
 end
 
-function doSelected()
+function updateSelection(selected)
   print("Updating selection")
   for i = 1, #self.children do
     -- Float to Sends dB Mapping
@@ -26,6 +29,7 @@ function doSelected()
     
     if i == selected then
       db = 0.75
+      self.children[i].children["Mix Select Button"].values.x = 1
       self.children[i].children["Mix Select Button"].interactive = false
     else
       self.children[i].children["Mix Select Button"].values.x = 0
