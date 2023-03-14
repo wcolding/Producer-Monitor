@@ -2877,7 +2877,7 @@
                   </osc>
                 </messages>
                 <children>
-                  <node ID="e3ab5031-af8e-11ec-8e2e-04922658cf47" type="GROUP">
+                  <node ID="5e5d07d7-cf3e-4c35-b3a4-da33aaed3187" type="GROUP">
                     <properties>
                       <property type="b">
                         <key>background</key>
@@ -2900,7 +2900,7 @@
                         <key>frame</key>
                         <value>
                           <x>10</x>
-                          <y>20</y>
+                          <y>32</y>
                           <w>160</w>
                           <h>120</h>
                         </value>
@@ -2964,7 +2964,7 @@
                       </value>
                     </values>
                     <children>
-                      <node ID="e3ab5032-af8e-11ec-ad2c-04922658cf47" type="BUTTON">
+                      <node ID="5fcf26b4-9854-4320-a8d7-1bb4e02d0d54" type="BUTTON">
                         <properties>
                           <property type="b">
                             <key>background</key>
@@ -3162,7 +3162,7 @@
                           </osc>
                         </messages>
                       </node>
-                      <node ID="40f852a0-ad55-11ed-b0db-04922658cf47" type="LABEL">
+                      <node ID="d02d1d14-ed8a-4853-9c8f-e0f1721d85d2" type="LABEL">
                         <properties>
                           <property type="b">
                             <key>background</key>
@@ -3273,7 +3273,7 @@
                             <key>text</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>1</lockedDefaultCurrent>
-                            <default>Label</default>
+                            <default>Ch01</default>
                             <defaultPull>0</defaultPull>
                           </value>
                           <value>
