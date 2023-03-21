@@ -551,7 +551,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -898,7 +898,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -1049,7 +1049,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Mix_Label.lua}</value>
+                            <value>${Expanding_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -1141,7 +1141,15 @@
                                 <scaleMax>1</scaleMax>
                               </partial>
                             </path>
-                            <arguments />
+                            <arguments>
+                              <partial>
+                                <type>VALUE</type>
+                                <conversion>STRING</conversion>
+                                <value>text</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </arguments>
                           </osc>
                         </messages>
                       </node>
@@ -1284,7 +1292,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -1435,7 +1443,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Mix_Label.lua}</value>
+                            <value>${Expanding_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -1527,7 +1535,15 @@
                                 <scaleMax>1</scaleMax>
                               </partial>
                             </path>
-                            <arguments />
+                            <arguments>
+                              <partial>
+                                <type>VALUE</type>
+                                <conversion>STRING</conversion>
+                                <value>text</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </arguments>
                           </osc>
                         </messages>
                       </node>
@@ -1670,7 +1686,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -1821,7 +1837,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Mix_Label.lua}</value>
+                            <value>${Expanding_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -1913,7 +1929,15 @@
                                 <scaleMax>1</scaleMax>
                               </partial>
                             </path>
-                            <arguments />
+                            <arguments>
+                              <partial>
+                                <type>VALUE</type>
+                                <conversion>STRING</conversion>
+                                <value>text</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </arguments>
                           </osc>
                         </messages>
                       </node>
@@ -2056,7 +2080,7 @@
                           </property>
                           <property type="b">
                             <key>outline</key>
-                            <value>1</value>
+                            <value>0</value>
                           </property>
                           <property type="i">
                             <key>outlineStyle</key>
@@ -2207,7 +2231,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Mix_Label.lua}</value>
+                            <value>${Expanding_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -2299,7 +2323,15 @@
                                 <scaleMax>1</scaleMax>
                               </partial>
                             </path>
-                            <arguments />
+                            <arguments>
+                              <partial>
+                                <type>VALUE</type>
+                                <conversion>STRING</conversion>
+                                <value>text</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </arguments>
                           </osc>
                         </messages>
                       </node>
@@ -2343,7 +2375,7 @@
                       </property>
                       <property type="b">
                         <key>locked</key>
-                        <value>1</value>
+                        <value>0</value>
                       </property>
                       <property type="s">
                         <key>name</key>
@@ -3079,7 +3111,7 @@
                             <send>1</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
-                            <connections>00001</connections>
+                            <connections>11111</connections>
                             <path>
                               <partial>
                                 <type>CONSTANT</type>
@@ -3110,7 +3142,7 @@
                             <send>1</send>
                             <receive>1</receive>
                             <feedback>0</feedback>
-                            <connections>00001</connections>
+                            <connections>11111</connections>
                             <triggers>
                               <trigger>
                                 <var>x</var>
@@ -3232,7 +3264,7 @@
                           </property>
                           <property type="s">
                             <key>script</key>
-                            <value>${Expanding_Button_Label.lua}</value>
+                            <value>${Expanding_Label.lua}</value>
                           </property>
                           <property type="i">
                             <key>shape</key>
@@ -3324,7 +3356,15 @@
                                 <scaleMax>1</scaleMax>
                               </partial>
                             </path>
-                            <arguments />
+                            <arguments>
+                              <partial>
+                                <type>VALUE</type>
+                                <conversion>STRING</conversion>
+                                <value>text</value>
+                                <scaleMin>0</scaleMin>
+                                <scaleMax>1</scaleMax>
+                              </partial>
+                            </arguments>
                           </osc>
                         </messages>
                       </node>
@@ -3588,7 +3628,7 @@
               </property>
               <property type="b">
                 <key>outline</key>
-                <value>1</value>
+                <value>0</value>
               </property>
               <property type="i">
                 <key>outlineStyle</key>
@@ -3764,6 +3804,125 @@
             </values>
           </node>
         </children>
+      </node>
+      <node ID="22f8b4c8-c81e-11ed-b47e-04922658cf47" type="LABEL">
+        <properties>
+          <property type="b">
+            <key>background</key>
+            <value>0</value>
+          </property>
+          <property type="c">
+            <key>color</key>
+            <value>
+              <r>1</r>
+              <g>0</g>
+              <b>0</b>
+              <a>1</a>
+            </value>
+          </property>
+          <property type="f">
+            <key>cornerRadius</key>
+            <value>1</value>
+          </property>
+          <property type="i">
+            <key>font</key>
+            <value>0</value>
+          </property>
+          <property type="r">
+            <key>frame</key>
+            <value>
+              <x>1189</x>
+              <y>0</y>
+              <w>149</w>
+              <h>25</h>
+            </value>
+          </property>
+          <property type="b">
+            <key>grabFocus</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>interactive</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>locked</key>
+            <value>0</value>
+          </property>
+          <property type="s">
+            <key>name</key>
+            <value>Version Label</value>
+          </property>
+          <property type="i">
+            <key>orientation</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>outline</key>
+            <value>0</value>
+          </property>
+          <property type="i">
+            <key>outlineStyle</key>
+            <value>1</value>
+          </property>
+          <property type="i">
+            <key>pointerPriority</key>
+            <value>0</value>
+          </property>
+          <property type="i">
+            <key>shape</key>
+            <value>1</value>
+          </property>
+          <property type="i">
+            <key>textAlignH</key>
+            <value>3</value>
+          </property>
+          <property type="i">
+            <key>textAlignV</key>
+            <value>2</value>
+          </property>
+          <property type="b">
+            <key>textClip</key>
+            <value>1</value>
+          </property>
+          <property type="c">
+            <key>textColor</key>
+            <value>
+              <r>1</r>
+              <g>1</g>
+              <b>1</b>
+              <a>1</a>
+            </value>
+          </property>
+          <property type="i">
+            <key>textLength</key>
+            <value>0</value>
+          </property>
+          <property type="i">
+            <key>textSize</key>
+            <value>14</value>
+          </property>
+          <property type="b">
+            <key>visible</key>
+            <value>1</value>
+          </property>
+        </properties>
+        <values>
+          <value>
+            <key>text</key>
+            <locked>0</locked>
+            <lockedDefaultCurrent>1</lockedDefaultCurrent>
+            <default>$VERSION</default>
+            <defaultPull>0</defaultPull>
+          </value>
+          <value>
+            <key>touch</key>
+            <locked>0</locked>
+            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+            <default>false</default>
+            <defaultPull>0</defaultPull>
+          </value>
+        </values>
       </node>
     </children>
   </node>

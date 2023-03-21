@@ -1,27 +1,32 @@
 local mixes = {
   [0] = 13, --program will be fed to mixbus 13
-  [1] = 9,
-  [2] = 10,
-  [3] = 11,
-  [4] = 12,
+  [1] = 9,  -- Zone 1
+  [2] = 10, -- Zone 2
+  [3] = 11, -- Zone 3
+  [4] = 12, -- Zone 4
   [5] = 13 + self.MATRIX  --auto-adjust custom mix by chosen matrix index
 }
 
-local mixButtons
 local mixSelect = root:findByName("Mix Select", true)
+local buttonGrid = root:findByName("Button Grid", true)
 
 local currentChannel = 1
+local currentZone = 1
 local delay = 20
+local cooldown = 1000
 local lastUpdate = 0
-local updating = false
+local lastFullRefresh = 0
+local updating = true
 local tick = 0
 
 local oscString = ""
 
 function init()
+  mixes[5] = 13 + self.MATRIX
   print("User info:")
   print(self.USERNAME)
   print(string.format("Matrix %02d", self.MATRIX))
+  print(string.format("Mix %02d", mixes[5]))
   print()
 
   local userObj = root:findByName("User")
@@ -29,10 +34,13 @@ function init()
 
   self.tag = string.format("%02d", self.MATRIX)
   
-  customMix = root:findByName("Button Grid", true)
+  customMix = mixSelect.children["Custom"]
   customMix.tag = string.format("%02d", mixes[5])
+  buttonGrid.tag = string.format("%02d", mixes[5])
   
-  PullX32()
+  --PullX32()
+  tick = 0
+  updating = true
 end
 
 function onValueChanged(key)
@@ -47,19 +55,46 @@ function onValueChanged(key)
 end
 
 function update()
+  tick = getMillis()
+
   if updating then
-    tick = getMillis()
+    -- Update either channels or zones
     if (tick - lastUpdate) > delay then
-      lastUpdate = tick
-      if currentChannel < 33 then
-        GetCustomMixChannel(currentChannel)
-        currentChannel = currentChannel + 1
+      if self.values.page == 1 then
+        UpdateChannels()
       else
-        -- Stop updating after 1 cycle
-        currentChannel = 1
-        updating = false
+        UpdateZones()
       end
     end
+  else
+    -- On cooldown
+    if (tick - lastFullRefresh) > cooldown then
+      updating = true;
+    end
+  end
+end
+
+function UpdateChannels()
+  lastUpdate = tick
+  if currentChannel < (#buttonGrid.children + 1) then
+    GetCustomMixChannel(currentChannel)
+    currentChannel = currentChannel + 1
+  else
+    lastFullRefresh = tick
+    currentChannel = 1
+    updating = false
+  end
+end
+
+function UpdateZones()
+  lastUpdate = tick
+  if currentZone < 5 then
+    GetZone(currentZone)
+    currentZone = currentZone + 1
+  else
+    lastFullRefresh = tick
+    currentZone = 1
+    updating = false
   end
 end
 
@@ -72,18 +107,23 @@ function GetCustomMixChannel(channel)
   sendOSC(oscString)
 end
 
+function GetZone(zone)
+  oscString = string.format("/bus/%02d/config/name", mixes[zone])
+  sendOSC(oscString)
+  oscString = string.format("/bus/%02d/config/color", mixes[zone])
+  sendOSC(oscString)
+end
+
 function GetCustomMixData()
   currentChannel = 1
   updating = true
 end
 
-function PullX32()
-  mixButtons = root:findByName("Mix Select", true)
-  
+function PullX32() 
   print("Fetching mixbus config...")
   local child
-  for i = 1, #mixButtons.children do
-    child = mixButtons.children[i]
+  for i = 1, #mixSelect.children do
+    child = mixSelect.children[i]
     child.tag = string.format("%02d", mixes[i-1])
     
     if child.name ~= "PGM" and child.name ~= "Custom" then
