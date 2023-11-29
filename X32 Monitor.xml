@@ -3052,6 +3052,10 @@
                             <key>orientation</key>
                             <value>0</value>
                           </property>
+                          <property type="i">
+                            <key>exclusiveGroup</key>
+                            <value>0</value>
+                          </property>
                           <property type="b">
                             <key>outline</key>
                             <value>0</value>

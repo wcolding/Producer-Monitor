@@ -45,3 +45,9 @@ function onReceiveOSC(message, connections)
     end
   end
 end
+
+function onValueChanged(key)
+  if key == "x" and self.values.x == 1 then
+    self.notify(self.parent.parent, "Toggle", self.exclusiveGroup)
+  end
+end
