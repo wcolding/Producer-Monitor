@@ -77,7 +77,9 @@ end
 function UpdateChannels()
   lastUpdate = tick
   if currentChannel < (#buttonGrid.children + 1) then
-    GetCustomMixChannel(currentChannel)
+    if buttonGrid.children[currentChannel].visible == true then
+      GetCustomMixChannel(currentChannel)
+    end
     currentChannel = currentChannel + 1
   else
     lastFullRefresh = tick
@@ -135,6 +137,9 @@ function PullX32()
   end
   
   print("Fetching custom mix...")
+  for i = 1, #buttonGrid.children do
+    buttonGrid.children[i].visible = true
+  end
   GetCustomMixData()
   
   print("Done!")
