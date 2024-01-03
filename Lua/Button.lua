@@ -1,3 +1,4 @@
+local labelPath
 local colorPath
 local toggledPath
 
@@ -14,6 +15,7 @@ local fillColors =
 }
 
 function init()
+  labelPath = string.format("/ch/%02d/config/name", self.parent.tag)
   colorPath = string.format("/ch/%s/config/color", self.parent.tag)
   toggledPath = string.format("/ch/%s/mix/%s/on", self.parent.tag, self.parent.parent.tag)
 end
@@ -46,6 +48,7 @@ function onReceiveOSC(message, connections)
     end
     
     if (path == toggledPath) then
+      --print(string.format("New value received: %d", arguments[1].value))
       --self.values.x = arguments[1].value
     end
   end
@@ -54,5 +57,16 @@ end
 function onValueChanged(key)
   if key == "x" and self.values.x == 1 then
     self.notify(self.parent.parent, "Toggle", self.exclusiveGroup)
+  end
+end
+
+function onReceiveNotify(updateType)
+  if updateType == "toggle" then
+    sendOSC(toggledPath)
+  end
+
+  if updateType == "display" then
+    sendOSC(labelPath)
+    sendOSC(colorPath)
   end
 end

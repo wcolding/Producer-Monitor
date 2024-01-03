@@ -58,11 +58,8 @@ function update()
   tick = getMillis()
 
   if updating then
-    -- Update either channels or zones
     if (tick - lastUpdate) > delay then
-      if self.values.page == 1 then
-        UpdateChannels()
-      else
+      if self.values.page == 0 then
         UpdateZones()
       end
     end
@@ -71,20 +68,6 @@ function update()
     if (tick - lastFullRefresh) > cooldown then
       updating = true;
     end
-  end
-end
-
-function UpdateChannels()
-  lastUpdate = tick
-  if currentChannel < (#buttonGrid.children + 1) then
-    if buttonGrid.children[currentChannel].visible == true then
-      GetCustomMixChannel(currentChannel)
-    end
-    currentChannel = currentChannel + 1
-  else
-    lastFullRefresh = tick
-    currentChannel = 1
-    updating = false
   end
 end
 
@@ -98,15 +81,6 @@ function UpdateZones()
     currentZone = 1
     updating = false
   end
-end
-
-function GetCustomMixChannel(channel)
-  oscString = string.format("/ch/%02d/mix/%02d/on", channel, mixes[5])
-  sendOSC(oscString)
-  oscString = string.format("/ch/%02d/config/name", channel)
-  sendOSC(oscString)
-  oscString = string.format("/ch/%02d/config/color", channel)
-  sendOSC(oscString)
 end
 
 function GetZone(zone)

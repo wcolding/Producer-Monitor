@@ -3928,6 +3928,277 @@
           </value>
         </values>
       </node>
+      <node ID="8093fa98-a9d7-11ee-b914-04922658cf47" type="GROUP">
+        <properties>
+          <property type="b">
+            <key>background</key>
+            <value>1</value>
+          </property>
+          <property type="c">
+            <key>color</key>
+            <value>
+              <r>0.25</r>
+              <g>0.25</g>
+              <b>0.25</b>
+              <a>1</a>
+            </value>
+          </property>
+          <property type="f">
+            <key>cornerRadius</key>
+            <value>1</value>
+          </property>
+          <property type="r">
+            <key>frame</key>
+            <value>
+              <x>0</x>
+              <y>0</y>
+              <w>100</w>
+              <h>100</h>
+            </value>
+          </property>
+          <property type="b">
+            <key>grabFocus</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>interactive</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>locked</key>
+            <value>0</value>
+          </property>
+          <property type="s">
+            <key>name</key>
+            <value>Update Managers</value>
+          </property>
+          <property type="i">
+            <key>orientation</key>
+            <value>0</value>
+          </property>
+          <property type="b">
+            <key>outline</key>
+            <value>1</value>
+          </property>
+          <property type="i">
+            <key>outlineStyle</key>
+            <value>0</value>
+          </property>
+          <property type="i">
+            <key>pointerPriority</key>
+            <value>0</value>
+          </property>
+          <property type="i">
+            <key>shape</key>
+            <value>1</value>
+          </property>
+          <property type="b">
+            <key>visible</key>
+            <value>0</value>
+          </property>
+        </properties>
+        <values>
+          <value>
+            <key>touch</key>
+            <locked>0</locked>
+            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+            <default>false</default>
+            <defaultPull>0</defaultPull>
+          </value>
+        </values>
+        <children>
+          <node ID="dfa27c1c-a9d7-11ee-9976-04922658cf47" type="BOX">
+            <properties>
+              <property type="b">
+                <key>background</key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key>color</key>
+                <value>
+                  <r>1</r>
+                  <g>0</g>
+                  <b>0</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key>cornerRadius</key>
+                <value>1</value>
+              </property>
+              <property type="r">
+                <key>frame</key>
+                <value>
+                  <x>0</x>
+                  <y>0</y>
+                  <w>50</w>
+                  <h>50</h>
+                </value>
+              </property>
+              <property type="b">
+                <key>grabFocus</key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key>interactive</key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key>locked</key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key>name</key>
+                <value>Update Manager</value>
+              </property>
+              <property type="s">
+                <key>updateType</key>
+                <value>toggle</value>
+              </property>
+              <property type="i">
+                <key>cooldown</key>
+                <value>100</value>
+              </property>
+              <property type="b">
+                <key>ignoreHiddenButtons</key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key>orientation</key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key>outline</key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key>outlineStyle</key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key>pointerPriority</key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key>script</key>
+                <value>${Update_Manager.lua}</value>
+              </property>
+              <property type="i">
+                <key>shape</key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key>visible</key>
+                <value>0</value>
+              </property>
+            </properties>
+            <values>
+              <value>
+                <key>touch</key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default>false</default>
+                <defaultPull>0</defaultPull>
+              </value>
+            </values>
+          </node>
+          <node ID="0538b1a8-a9d8-11ee-b249-04922658cf47" type="BOX">
+            <properties>
+              <property type="b">
+                <key>background</key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key>color</key>
+                <value>
+                  <r>1</r>
+                  <g>0</g>
+                  <b>0</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key>cornerRadius</key>
+                <value>1</value>
+              </property>
+              <property type="r">
+                <key>frame</key>
+                <value>
+                  <x>50</x>
+                  <y>0</y>
+                  <w>50</w>
+                  <h>50</h>
+                </value>
+              </property>
+              <property type="b">
+                <key>grabFocus</key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key>interactive</key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key>locked</key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key>name</key>
+                <value>Update Manager</value>
+              </property>
+              <property type="s">
+                <key>updateType</key>
+                <value>display</value>
+              </property>
+              <property type="i">
+                <key>cooldown</key>
+                <value>1000</value>
+              </property>
+              <property type="b">
+                <key>ignoreHiddenButtons</key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key>orientation</key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key>outline</key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key>outlineStyle</key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key>pointerPriority</key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key>script</key>
+                <value>${Update_Manager.lua}</value>
+              </property>
+              <property type="i">
+                <key>shape</key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key>visible</key>
+                <value>0</value>
+              </property>
+            </properties>
+            <values>
+          <value>
+            <key>touch</key>
+            <locked>0</locked>
+            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+            <default>false</default>
+            <defaultPull>0</defaultPull>
+          </value>
+        </values>
+          </node>
+        </children>
+      </node>
     </children>
   </node>
 </lexml>
