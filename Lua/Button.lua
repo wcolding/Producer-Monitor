@@ -1,5 +1,5 @@
-local colorPath = string.format("/ch/%s/config/color", self.parent.tag)
-local toggledPath = string.format("/ch/%s/mix/%s/on", self.parent.tag, self.parent.parent.tag)
+local colorPath
+local toggledPath
 
 local fillColors = 
 {
@@ -12,6 +12,11 @@ local fillColors =
   [6] = Color.fromHexString('2de0e7ff'), -- cyan
   [7] = Colors.gray                      -- white
 }
+
+function init()
+  colorPath = string.format("/ch/%s/config/color", self.parent.tag)
+  toggledPath = string.format("/ch/%s/mix/%s/on", self.parent.tag, self.parent.parent.tag)
+end
 
 function SetColor(i)
   local translated = i 
@@ -41,7 +46,7 @@ function onReceiveOSC(message, connections)
     end
     
     if (path == toggledPath) then
-      self.values.x = arguments[1].value
+      --self.values.x = arguments[1].value
     end
   end
 end
