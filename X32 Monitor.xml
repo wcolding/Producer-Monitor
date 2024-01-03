@@ -1,4 +1,4 @@
-<lexml version="3">
+<lexml version="4">
   <node ID="e0b30264-aea9-11ec-ba9e-04922658cf47" type="GROUP">
     <properties>
       <property type="b">
@@ -588,17 +588,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -935,17 +935,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -1329,17 +1329,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -1723,17 +1723,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -2117,17 +2117,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -2511,17 +2511,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -3023,6 +3023,10 @@
                             <key>cornerRadius</key>
                             <value>1</value>
                           </property>
+                          <property type="i">
+                            <key>exclusiveGroup</key>
+                            <value>0</value>
+                          </property>
                           <property type="r">
                             <key>frame</key>
                             <value>
@@ -3050,10 +3054,6 @@
                           </property>
                           <property type="i">
                             <key>orientation</key>
-                            <value>0</value>
-                          </property>
-                          <property type="i">
-                            <key>exclusiveGroup</key>
                             <value>0</value>
                           </property>
                           <property type="b">
@@ -3095,17 +3095,17 @@
                         </properties>
                         <values>
                           <value>
-                            <key>touch</key>
-                            <locked>0</locked>
-                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                            <default>false</default>
-                            <defaultPull>0</defaultPull>
-                          </value>
-                          <value>
                             <key>x</key>
                             <locked>0</locked>
                             <lockedDefaultCurrent>0</lockedDefaultCurrent>
                             <default>0</default>
+                            <defaultPull>0</defaultPull>
+                          </value>
+                          <value>
+                            <key>touch</key>
+                            <locked>0</locked>
+                            <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                            <default>false</default>
                             <defaultPull>0</defaultPull>
                           </value>
                         </values>
@@ -3669,17 +3669,17 @@
             </properties>
             <values>
               <value>
-                <key>touch</key>
-                <locked>0</locked>
-                <lockedDefaultCurrent>0</lockedDefaultCurrent>
-                <default>false</default>
-                <defaultPull>0</defaultPull>
-              </value>
-              <value>
                 <key>x</key>
                 <locked>0</locked>
                 <lockedDefaultCurrent>0</lockedDefaultCurrent>
                 <default>0</default>
+                <defaultPull>0</defaultPull>
+              </value>
+              <value>
+                <key>touch</key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default>false</default>
                 <defaultPull>0</defaultPull>
               </value>
             </values>
