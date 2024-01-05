@@ -3052,6 +3052,10 @@
                             <key>name</key>
                             <value>Button</value>
                           </property>
+                          <property type="s">
+                            <key>MIXBUS</key>
+                            <value>14</value>
+                          </property>
                           <property type="i">
                             <key>orientation</key>
                             <value>0</value>
@@ -3178,7 +3182,7 @@
                               <partial>
                                 <type>PROPERTY</type>
                                 <conversion>STRING</conversion>
-                                <value>parent.parent.tag</value>
+                                <value>MIXBUS</value>
                                 <scaleMin>0</scaleMin>
                                 <scaleMax>1</scaleMax>
                               </partial>
