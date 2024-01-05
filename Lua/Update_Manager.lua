@@ -1,4 +1,5 @@
 local buttonGrid
+local tabs
 local updating
 local curTime
 local lastUpdate
@@ -8,6 +9,7 @@ local curChannel
 
 function init()
     buttonGrid = root:findByName("Button Grid", true)
+    tabs = root:findByName("Tabs", true)
     lastUpdate = 0
     lastFullRefresh = 0
     delay = 20
@@ -18,16 +20,18 @@ end
 function update()
     curTime = getMillis()
 
-    if updating then
-        if (curTime - lastUpdate) > delay then
-            requestData()
+    if tabs.values.page == 1 then
+        if updating then
+            if (curTime - lastUpdate) > delay then
+                requestData()
+            end
+        else
+            -- On cooldown
+            if (curTime - lastFullRefresh) > self.cooldown then
+                updating = true;
+            end
         end
-    else
-        -- On cooldown
-        if (curTime - lastFullRefresh) > self.cooldown then
-            updating = true;
-        end
-    end
+    end 
 end
 
 function requestData()
