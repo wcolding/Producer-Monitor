@@ -36,7 +36,7 @@ function updateSelection(selected)
       self.children[i].children["Mix Select Button"].interactive = true
     end
     
-    oscString = string.format("/bus/%02d/mix/%02d/level", self.children[i].tag, self.parent.parent.tag)
+    oscString = string.format("/bus/%s/mix/%02d/level", self.children[i].tag, self.parent.parent.MATRIX)
     sendOSC(oscString, db)
   end
 end
