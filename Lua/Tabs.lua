@@ -41,6 +41,9 @@ function init()
   --PullX32()
   tick = 0
   updating = true
+
+  -- Start on custom mix page
+  self.values.page = 1
 end
 
 function onValueChanged(key)

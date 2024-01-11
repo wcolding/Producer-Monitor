@@ -1,13 +1,13 @@
 local oscString
 local db
 
-function init()
-  for i = 1, #self.children do
-    if i == self.selected then
-      self.children[i].children["Mix Select Button"].values.x = 1
-    end
-  end
-end
+-- function init()
+--   for i = 1, #self.children do
+--     if i == self.selected then
+--       self.children[i].children["Mix Select Button"].values.x = 1
+--     end
+--   end
+-- end
 
 function onReceiveNotify(sender, msg)
   if msg < 6 then 
@@ -19,7 +19,7 @@ function onReceiveNotify(sender, msg)
 end
 
 function updateSelection(selected)
-  print("Updating selection")
+  print(string.format("Updating selection: %d", selected))
   for i = 1, #self.children do
     -- Float to Sends dB Mapping
     -- 0.75f = 0.0 dB
