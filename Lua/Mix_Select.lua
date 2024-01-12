@@ -1,13 +1,9 @@
 local oscString
 local db
 
--- function init()
---   for i = 1, #self.children do
---     if i == self.selected then
---       self.children[i].children["Mix Select Button"].values.x = 1
---     end
---   end
--- end
+function init()
+  updateSelection(6)
+end
 
 function onReceiveNotify(sender, msg)
   if msg < 6 then 
